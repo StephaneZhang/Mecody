@@ -25,7 +25,7 @@ $include<source_name\*> //Import all;
 $include<source_name\part_name(,part_name,part_name...)> //Import some parts;
 ```
 
-####Values
+#### Values
 
 Mecody提供了许多与音乐相关的变量，分为**全局变量**与**局部变量**两种。
 
