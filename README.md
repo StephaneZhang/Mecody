@@ -9,8 +9,8 @@
 Example:
 ```
 $include<piano\*>
-using global.speed 80 bpm;
-using global.strength 65 dB; //单位可省略
+set global.speed 80;
+set global.strength 65; //单位可省略
 ```
 
 后期我们将添加更多音源并允许用户自行上传。上传之音源与本软件遵循相同协议。
@@ -37,4 +37,17 @@ Mecody提供了许多与音乐相关的变量，分为**全局变量**与**局�
 (global.)speed //速度，单位为bpm
 (global.)strength //响度，单位为dB
 (global.)pitch //音调，为0则1=C，为1则1=#C……
+```
+
+设置变量可以使用`set`语句。格式：
+
+```
+set value_name value;
+```
+
+举个例子：
+
+```
+set global.strength 72;
+set global.speed 85;
 ```
