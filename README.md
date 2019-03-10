@@ -23,3 +23,18 @@ Code：
 ```
 $include<source_name\*> //Import all;
 $include<source_name\part_name(,part_name,part_name...)> //Import some parts;
+```
+
+####Values
+
+Mecody提供了许多与音乐相关的变量，分为**全局变量**与**局部变量**两种。
+
+全局变量为一个“基准数”，不设置则默认为0，以`global.`打头。
+
+我们提供以下的变量：
+
+```
+(global.)speed //速度，单位为bpm
+(global.)strength //响度，单位为dB
+(global.)pitch //音调，为0则1=C，为1则1=#C……
+```
