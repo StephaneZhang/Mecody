@@ -4,50 +4,52 @@
 
 正如引言所述，Mecody是一个使用代码操控的高效率音乐制作软件。它使用易学的代码行与控制逻辑来编写音乐，省去了大量拖动鼠标的烦恼，同时本软件完全开源（免费），以致力于让音乐制作不受外界条件的影响。
 
-如果您曾经学习过一门程序语言，你会发现它是非常易用的。
-
-Example:
-```
-$include<piano\*>
-set global.speed 80;
-set global.strength 65; //单位可省略
-```
-
-后期我们将添加更多音源并允许用户自行上传。上传之音源与本软件遵循相同协议。
-
 ### Usage
 
-#### Import Sources
+#### I Source Pack
 
-Code：
+Grammer: `$ import <Packname>`
+
+#### II Settings
+
+Grammer: 
+
+**Global**
 ```
-$include<source_name\*> //Import all;
-$include<source_name\part_name(,part_name,part_name...)> //Import some parts;
+$ define global_set {
+  valuename = value
+  ...
+}
+```
+Example:
+```
+$ define global_set {
+  strength = 80
+  unit = (+4*,1/4) // or other kinds of notes
+  speed = 120
+}
+```
+**Others**
+```
+//(in the function main)
+  valuename = value
+```
+Example:
+```
+$ define main {
+  //lines...
+  strength = 120
+  //lines...
+}
 ```
 
-#### Values
+#### III Notes
 
-Mecody提供了许多与音乐相关的变量，分为**全局变量**与**局部变量**两种。
-
-全局变量为一个“基准数”，不设置则默认为0，以`global.`打头。
-
-我们提供以下的变量：
+Grammer:
 
 ```
-(global.)speed //速度，单位为bpm
-(global.)strength //响度，单位为dB
-(global.)pitch //音调，为0则1=C，为1则1=#C……
+((+,+0.5)(-,-0.5)Note(*,+8)(/,-8),length(beat))
 ```
 
-设置变量可以使用`set`语句。格式：
-
-```
-set value_name value;
-```
-
-举个例子：
-
-```
-set global.strength 72;
-set global.speed 85;
-```
+Example:
+`(1,1)` - C in centre
